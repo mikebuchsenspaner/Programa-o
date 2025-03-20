@@ -269,7 +269,7 @@ Método Construtor(modelo, ano):
 
 Define os valores dos atributos modelo e ano com os valores passados como parâmetro.
 Método CalcularConsumo():
-
+```
 
 ```pseudo
 Classe Veiculo
