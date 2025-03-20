@@ -363,3 +363,30 @@ Escrever("Total de investimentos acumulados:")
 ImprimirMatriz(totalInvestimentos)  
 ```
 Agora, implemente a função MultiplicarMatrizesInvestimento(matrizA, matrizB), que multiplica as duas matrizes, simulando o efeito de diferentes fatores de crescimento e impacto financeiro nos investimentos ao longo do tempo.
+
+```pseudo
+Função MultiplicarMatrizesInvestimento(matrizA, matrizB)
+    Se número de colunas de matrizA ≠ número de linhas de matrizB então
+        Retornar "As matrizes não podem ser multiplicadas. Dimensões incompatíveis."
+    Senão
+        linhas <- tamanho(matrizA)
+        colunas <- tamanho(matrizB[0])
+        matrizResultado <- novaMatriz(linhas, colunas)
+
+        Para i de 0 até linhas-1 faça
+            Para j de 0 até colunas-1 faça
+                matrizResultado[i][j] <- 0
+                Para k de 0 até tamanho(matrizA[0])-1 faça
+                    matrizResultado[i][j] <- matrizResultado[i][j] + matrizA[i][k] * matrizB[k][j]
+
+        Retornar matrizResultado
+
+# Exemplo de uso
+investimentosAno1 <- [[1000, 2000], [1500, 2500]]
+investimentosAno2 <- [[1200, 1800], [1300, 2700]]
+
+resultadoMultiplicacao <- MultiplicarMatrizesInvestimento(investimentosAno1, investimentosAno2)
+Escrever("Resultado da multiplicação das matrizes de investimento:")
+ImprimirMatriz(resultadoMultiplicacao)
+```
+
