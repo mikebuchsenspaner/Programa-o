@@ -269,6 +269,38 @@ Método Construtor(modelo, ano):
 
 Define os valores dos atributos modelo e ano com os valores passados como parâmetro.
 Método CalcularConsumo():
+
+
+```pseudo
+Classe Veiculo
+    Atributos:
+        modelo
+        ano
+    Método Construtor(modelo, ano):
+        modelo <- modelo
+        ano <- ano
+    Método CalcularConsumo():
+        Retornar "Método deve ser implementado nas subclasses"
+
+Classe Carro herda Veiculo
+    Atributos:
+        eficiencia (km/l)
+    Método Construtor(modelo, ano, eficiencia):
+        Chamar Construtor de Veiculo(modelo, ano)
+        eficiencia <- eficiencia
+    Método CalcularConsumo(distancia):
+        Retornar distancia / eficiencia
+
+Classe Moto herda Veiculo
+    Atributos:
+        eficiencia (km/l)
+    Método Construtor(modelo, ano, eficiencia):
+        Chamar Construtor de Veiculo(modelo, ano)
+        eficiencia <- eficiencia
+    Método CalcularConsumo(distancia):
+        Retornar distancia / eficiencia
+```
+
 ```
 Implementação genérica para cálculo de consumo, a ser sobrescrita pelas subclasses.
 Agora, implemente as classes Carro e Moto, garantindo que ambas herdem de Veiculo e possuam métodos específicos para calcular o consumo de combustível com base na quilometragem e eficiência do veículo.
