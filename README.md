@@ -315,6 +315,22 @@ Considere a fórumla de atualização velocidade:
     velocidade = velocidadeInicial - desaceleracao * tempo
 ```
 Seu programa deve determinar quanto tempo será necessário para que a sonda atinja uma velocidade segura de pouso, sem ultrapassar os limites estabelecidos.
+
+```pseudo
+Entrada: velocidadeInicial, desaceleracao, tempoMaximo
+velocidade <- velocidadeInicial
+tempo <- 0
+
+Enquanto velocidade > velocidadeSegura e tempo < tempoMaximo faça
+    velocidade <- velocidade - (desaceleracao * tempo)
+    tempo <- tempo + 1
+
+Se velocidade <= velocidadeSegura então
+    Exibir "Pouso seguro após", tempo, "segundos."
+Senão
+    Exibir "Falha: tempo máximo ultrapassado."
+```
+
 ______
 
 **10)** Em um sistema de análise financeira, as operações de investimento de uma empresa podem ser representadas por matrizes, onde cada linha representa um tipo de investimento e cada coluna representa um período de tempo.
